@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Спасибо за интерес — Israel Assist</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --teal: #26595A; --teal-deep: #1d4748; --teal-pale: #e8f3f3;
+      --orange: #E4510B; --orange-soft: #fff0e9;
+      --white: #ffffff; --text: #2c3e3e; --muted: #6a8585;
+      --line: #dde8e8; --yellow: #FFD600; --yellow-soft: #fffbe6;
+    }
+    html, body { font-family: 'Montserrat', sans-serif; background: var(--white); color: var(--text); -webkit-font-smoothing: antialiased; }
+    .hd { background: var(--teal); padding: 16px 24px; }
+    .hd img { height: 42px; width: auto; display: block; }
+    .hero { background: var(--teal); padding: 52px 24px 56px; text-align: center; }
+    .check { width: 76px; height: 76px; background: var(--orange); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 28px; box-shadow: 0 8px 32px rgba(228,81,11,.4); animation: pop .55s cubic-bezier(.34,1.56,.64,1) both; }
+    @keyframes pop { from { transform: scale(0); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+    .check svg { width: 38px; height: 38px; }
+    .hero h1 { color: #fff; font-size: clamp(24px,6vw,33px); font-weight: 800; line-height: 1.2; margin-bottom: 16px; animation: up .5s .15s ease both; }
+    .hero p { color: rgba(255,255,255,.82); font-size: 15px; line-height: 1.7; max-width: 460px; margin: 0 auto; animation: up .5s .25s ease both; }
+    .hero p strong { color: #fff; font-weight: 700; }
+    @keyframes up { from { transform: translateY(16px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+    .etias { background: var(--orange-soft); border-left: 4px solid var(--orange); padding: 18px 22px; display: flex; gap: 14px; align-items: flex-start; max-width: 620px; margin: 0 auto; }
+    .etias-ico { flex-shrink: 0; width: 38px; height: 38px; background: var(--orange); border-radius: 9px; display: flex; align-items: center; justify-content: center; font-size: 19px; }
+    .etias-txt { font-size: 13.5px; line-height: 1.6; }
+    .etias-txt b { color: var(--teal); font-weight: 700; display: block; margin-bottom: 4px; font-size: 14px; }
+    .wrap { max-width: 620px; margin: 0 auto; padding: 34px 24px; }
+    .lbl { font-size: 11px; font-weight: 700; letter-spacing: 1.8px; text-transform: uppercase; color: var(--teal); opacity: .65; margin-bottom: 20px; }
+    .div { max-width: 620px; margin: 0 auto; height: 1px; background: var(--line); }
+    .steps { display: flex; flex-direction: column; gap: 12px; }
+    .step { display: flex; gap: 16px; align-items: flex-start; background: var(--teal-pale); border-radius: 12px; padding: 18px 20px; }
+    .snum { flex-shrink: 0; width: 30px; height: 30px; background: var(--teal); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; margin-top: 2px; }
+    .stxt { font-size: 14px; line-height: 1.55; }
+    .stxt b { color: var(--teal); font-weight: 700; display: block; margin-bottom: 3px; }
+    .pgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .pcard { border: 2px solid var(--line); border-radius: 14px; padding: 22px 18px 18px; position: relative; }
+    .pcard.hot { border-color: var(--yellow); background: var(--yellow-soft); }
+    .ptag { position: absolute; top: -12px; left: 14px; background: var(--yellow); color: #1a1a1a; font-size: 10px; font-weight: 800; padding: 3px 10px; border-radius: 20px; letter-spacing: .5px; text-transform: uppercase; }
+    .ptier { font-size: 11px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+    .pmain { font-size: 24px; font-weight: 800; color: var(--teal); line-height: 1.1; margin-bottom: 3px; }
+    .pmain .cur { font-size: 13px; font-weight: 600; }
+    .porig { font-size: 12px; color: var(--muted); text-decoration: line-through; margin-bottom: 8px; }
+    .pnote { font-size: 12px; color: var(--muted); margin-bottom: 12px; }
+    .pfeats { display: flex; flex-direction: column; gap: 6px; }
+    .pf { font-size: 12px; display: flex; gap: 7px; align-items: flex-start; line-height: 1.4; }
+    .pf::before { content: "✓"; color: var(--teal); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+    .grow { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .gi { display: flex; gap: 12px; align-items: flex-start; padding: 16px; background: var(--teal-pale); border-radius: 12px; }
+    .gico { flex-shrink: 0; font-size: 21px; margin-top: 1px; }
+    .gt b { font-size: 13px; font-weight: 700; color: var(--teal); display: block; margin-bottom: 3px; }
+    .gt p { font-size: 12px; color: var(--muted); line-height: 1.5; }
+    .stats { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; }
+    .stat { text-align: center; padding: 18px 10px; border: 1px solid var(--line); border-radius: 12px; }
+    .stn { font-size: 20px; font-weight: 800; color: var(--teal); line-height: 1; margin-bottom: 6px; }
+    .stl { font-size: 11px; font-weight: 500; color: var(--muted); line-height: 1.4; }
+    .team { margin-top: 24px; }
+    .team img { display: block; width: 100%; height: auto; mask-image: linear-gradient(to bottom, black 55%, transparent 100%); -webkit-mask-image: linear-gradient(to bottom, black 55%, transparent 100%); }
+    .ft { background: var(--teal); padding: 28px 24px; text-align: center; margin-top: -2px; }
+    .ft-inner { max-width: 620px; margin: 0 auto; }
+    .ft img { height: 38px; width: auto; display: inline-block; margin-bottom: 14px; }
+    .ft-links { display: flex; gap: 18px; justify-content: center; flex-wrap: wrap; margin-bottom: 14px; }
+    .ft-links a { color: rgba(255,255,255,.6); font-size: 12.5px; font-weight: 500; text-decoration: none; }
+    .ft-note { color: rgba(255,255,255,.35); font-size: 11px; line-height: 1.5; }
+    @media (max-width: 500px) {
+      .pgrid, .grow { grid-template-columns: 1fr; }
+      .hero { padding: 40px 20px 44px; }
+      .wrap { padding: 26px 20px; }
+    }
+    @media (max-width: 360px) {
+      .stats { grid-template-columns: 1fr 1fr; }
+      .stat:last-child { grid-column: 1 / -1; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="hd"><img src="https://i.ibb.co/kV6LvShL/2.png" alt="Israel Assist"></div>
+
+<div class="hero">
+  <div class="check">
+    <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="20 6 9 17 4 12"/>
+    </svg>
+  </div>
+  <h1>Спасибо за интерес!</h1>
+  <p>Мы благодарим вас за доверие и будем рады познакомиться лично.<br><br>
+  <strong>В ближайшее время с вами свяжется наш сотрудник</strong> — больше ничего делать не нужно. Мы берём всё в свои руки.</p>
+</div>
+
+<div class="etias">
+  <div class="etias-ico">⚠️</div>
+  <div class="etias-txt">
+    <b>Важно: новые правила ETIAS в 2026 году</b>
+    Въезд в Европу с израильским паспортом без биометрического чипа потребует отдельной визы. Биометрический даркон решает эту проблему — оформить его можно только в Израиле.
+  </div>
+</div>
+
+<div class="div"></div>
+
+<div class="wrap">
+  <div class="lbl">Как это работает</div>
+  <div class="steps">
+    <div class="step"><div class="snum">1</div><div class="stxt"><b>Наш специалист свяжется с вами</b>Обсудим детали, ответим на вопросы — консультация бесплатная.</div></div>
+    <div class="step"><div class="snum">2</div><div class="stxt"><b>Мы подготовим весь пакет документов</b>Заполним анкеты на иврите, запишем в МВД без очередей, при необходимости организуем сопровождение.</div></div>
+    <div class="step"><div class="snum">3</div><div class="stxt"><b>Вы получаете биометрический даркон</b>Доставим документы в Москву. Ваше участие — минимально.</div></div>
+  </div>
+</div>
+
+<div class="div"></div>
+
+<div class="wrap">
+  <div class="lbl">Стоимость замены в Израиле</div>
+  <div class="pgrid">
+    <div class="pcard hot">
+      <div class="ptag">🔥 Акция</div>
+      <div class="ptier">Эконом</div>
+      <div class="pmain"><span class="cur">от </span>1 000<span class="cur"> $</span></div>
+      <div class="porig">обычно от 1 200 $</div>
+      <div class="pnote">На главу семьи</div>
+      <div class="pfeats">
+        <div class="pf">Запись в МВД от 3 месяцев</div>
+        <div class="pf">Подготовка документов</div>
+        <div class="pf">Сопровождение в МВД</div>
+        <div class="pf">Доставка в Москву</div>
+      </div>
+    </div>
+    <div class="pcard hot">
+      <div class="ptag">🔥 Акция</div>
+      <div class="ptier">Ускоренный</div>
+      <div class="pmain"><span class="cur">от </span>1 500<span class="cur"> $</span></div>
+      <div class="porig">обычно от 1 800 $</div>
+      <div class="pnote">На главу семьи</div>
+      <div class="pfeats">
+        <div class="pf">Запись от 1,5 месяцев</div>
+        <div class="pf">Подготовка документов</div>
+        <div class="pf">Сопровождение в МВД</div>
+        <div class="pf">Организация приезда + фаст-трек</div>
+      </div>
+    </div>
+  </div>
+  <p style="font-size:11.5px;color:var(--muted);margin-top:12px;line-height:1.5;">* На семью 2 взрослых + 2 ребёнка: от 1 600 / 2 500 $ по акции. Супруг/а +300 $, ребёнок +150 $.</p>
+</div>
+
+<div class="div"></div>
+
+<div class="wrap">
+  <div class="lbl">Почему Israel Assist</div>
+  <div class="grow">
+    <div class="gi"><div class="gico">📋</div><div class="gt"><b>Работа по договору</b><p>Стоимость фиксируется и не меняется в процессе</p></div></div>
+    <div class="gi"><div class="gico">🛡️</div><div class="gt"><b>Гарантия 99%</b><p>Сопровождаем на каждом этапе до результата</p></div></div>
+    <div class="gi"><div class="gico">💳</div><div class="gt"><b>Поэтапная оплата</b><p>Картой в офисе или переводом на расчётный счёт</p></div></div>
+    <div class="gi"><div class="gico">🏢</div><div class="gt"><b>Два офиса</b><p>Москва, Большая Полянка 43с3 и Нетания, Израиль</p></div></div>
+  </div>
+</div>
+
+<div class="div"></div>
+
+<div class="wrap" style="padding-bottom:0;">
+  <div class="stats">
+    <div class="stat"><div class="stn">8 лет</div><div class="stl">помогаем с документами</div></div>
+    <div class="stat"><div class="stn">1 окно</div><div class="stl">для всех задач гражданина Израиля</div></div>
+    <div class="stat"><div class="stn">161</div><div class="stl">страна без визы по даркону</div></div>
+  </div>
+  <div class="team"><img src="https://i.ibb.co/BVvT7pQY/image.png" alt="Команда Israel Assist"></div>
+</div>
+
+<div class="ft">
+  <div class="ft-inner">
+    <img src="https://i.ibb.co/kV6LvShL/2.png" alt="Israel Assist">
+    <div class="ft-links">
+      <a href="https://concierge-israel.com/kompaniya">О компании</a>
+      <a href="https://concierge-israel.com/uslugi">Услуги</a>
+      <a href="https://concierge-israel.com/otzyvy">Отзывы</a>
+      <a href="https://concierge-israel.com/kontakty">Контакты</a>
+    </div>
+    <div class="ft-note">Экспертная поддержка граждан Израиля · info@concierge-israel.com · 8 (499) 119-82-59</div>
+  </div>
+</div>
+
+</body>
+</html>
